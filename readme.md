@@ -89,6 +89,15 @@ $.ionTabs("#tabs_1, #tabs_2, #tabs_3");     // if you have many tabs groups on t
                 <code>none</code> — don't save tabs position. Each time page reloads, the first tab of each group will be open.<br/>
             </td>
         </tr>
+        <tr>
+            <td>historyReplace</td>
+            <td><code>false</code></td>
+            <td>
+                Optional property used in conjunction with <code>type</code>=<code>hash</code>, allowing to decide whether choosing tabs should spawn an entry in history:<br/>
+                <code>false</code> — push a new entry in browser history. (Affects user history)<br/>
+                <code>true</code> — replace current entry in browser history. (Does not affect history)<br/>
+            </td>
+        </tr>
     </tbody>
 </table>
 
@@ -147,6 +156,7 @@ $(".myButton").on("click", function(){
 
 
 ## Update history
+* April 07, 2014 - Added `replaceHistory` option
 * November 01, 2013 - Fixed bug with setTab method
 * October 19, 2013 - Fixed some minor bugs, many code optimisations, fixed some bugs in plugin description
 * September 15, 2013 - Plugin release

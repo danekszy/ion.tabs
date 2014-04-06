@@ -189,10 +189,13 @@
                     }
                 }
 
-                if (settings.type === "hash") {
+                if(settings.type === "hash" && settings.historyReplace && ("history" in window) && ("pushState" in history)) {
+                    window.history.replaceState({}, '', '#'+urlString);
+                }
+                else if (settings.type === "hash") {
                     location.hash = urlString;
                 }
-                if (settings.type === "storage") {
+                else if (settings.type === "storage") {
                     storage.save(location.hostname + "__ionTabsPosition", urlString);
                 }
             };
