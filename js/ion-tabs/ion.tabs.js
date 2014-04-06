@@ -1,4 +1,4 @@
-﻿// Ion.Tabs
+// Ion.Tabs
 // version 1.0.2 Build: 17
 // © 2013 Denis Ineshin | IonDen.com
 //
@@ -135,6 +135,16 @@
                 e.preventDefault();
                 showPreloader();
                 setTab($(this).data("target"));
+            });
+
+            //Trigger tab change on hashchange (ie. back button)
+            $(window).on('hashchange', function(){
+                getUrl();
+                if (url[name]) {
+                    setTab(url[name]);
+                } else {
+                    setTab($tabs.eq(0).data("target"));
+                }
             });
 
 
