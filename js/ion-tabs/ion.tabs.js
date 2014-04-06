@@ -138,14 +138,16 @@
             });
 
             //Trigger tab change on hashchange (ie. back button)
-            $(window).on('hashchange', function(){
-                getUrl();
-                if (url[name]) {
-                    setTab(url[name]);
-                } else {
-                    setTab($tabs.eq(0).data("target"));
-                }
-            });
+            if (settings.type === "hash") {
+                $(window).on('hashchange', function(){
+                    getUrl();
+                    if (url[name]) {
+                        setTab(url[name]);
+                    } else {
+                        setTab($tabs.eq(0).data("target"));
+                    }
+                });
+            }
 
 
             var setTab = function (target) {
