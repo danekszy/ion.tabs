@@ -141,11 +141,7 @@
             if (settings.type === "hash") {
                 $(window).on('hashchange', function(){
                     getUrl();
-                    if (url[name]) {
-                        setTab(url[name]);
-                    } else {
-                        setTab($tabs.eq(0).data("target"));
-                    }
+                    if (url[name]) setTab(url[name]);
                 });
             }
 
